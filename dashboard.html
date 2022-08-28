@@ -13,26 +13,34 @@
         crossorigin="anonymous"></script>
 </head>
 <style>
-    .row { margin-top:20px}
-    #canvas{
-        position:absolute;
+    .row {
+        margin-top: 20px
+    }
+
+    #canvas {
+        position: absolute;
         top: 0;
         z-index: -9999;
         /* filter: blur(2px) */
     }
-    a{
-        text-decoration:none;
+
+    a {
+        text-decoration: none;
         color: black;
-        font-weight:light;
+        font-weight: light;
     }
-    li{
+
+    li {
         list-style: none;
     }
 </style>
+
 <body>
-    <nav class="navbar bg-light bg-transparent">    
+    <nav class="navbar bg-light bg-transparent">
         <div class="container-fluid">
-            <a class="navbar-brand text-white" href="#" >
+            <a class="navbar-brand text-white" href="#">
+                <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&pause=1000&width=435&lines=HELLO!;Employee+management+system"
+                    alt="Typing SVG" />
                 <!-- <img
               src="../icons/bootstrap-logo.svg"
               alt=""
@@ -40,25 +48,26 @@
               height="24"
               class="d-inline-block align-text-top"
             /> -->
-                E-learn
+                <!-- Employee mangagement -->
             </a>
             <ul class="nav navbar-nav navbar-right mx-4">
                 <li>
-                    <a class="btn  btn-outline-primary" href="login.html"><span class="glyphicon text-white glyphicon-log-in">Login out</span> </a>
+                    <a class="btn  btn-outline-primary" href="login.html"><span
+                            class="glyphicon text-white glyphicon-log-in">Login out</span> </a>
                 </li>
             </ul>
         </div>
-        </nav>
-   <canvas id="canvas">
+    </nav>
+    <canvas id="canvas">
 
-                    </canvas>
+    </canvas>
     <div class="container-fluid">
 
         <div class="row">
             <div class="col-3">
                 <div class="row">
-    
-    
+
+
                     <div class="accordion" id="accordionPanelsStayOpenExample">
                         <div class="accordion-item">
                             <h2 class="accordion-header" id="panelsStayOpen-headingOne">
@@ -66,104 +75,141 @@
                                     data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true"
                                     aria-controls="panelsStayOpen-collapseOne">
                                     Dashboard
-                                    
+
                                 </button>
                             </h2>
-                            <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show"
+                            <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse "
                                 aria-labelledby="panelsStayOpen-headingOne">
                                 <div class="accordion-body">
                                     <ul>
 
                                         <li>
-    
+
                                             <a href="dashboard.html">Dashboard</a>
                                         </li>
                                     </ul>
                                 </div>
                             </div>
                         </div>
-    
-                    </div></div>
-                    <div class="row">
-    
-                        <div class="accordion" id="accordionPanelsStayOpenExample">
-                            <div class="accordion-item">
-                                <h2 class="accordion-header" id="panelsStayOpen-headingOne">
-                                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true"
-                                        aria-controls="panelsStayOpen-collapseOne">
-                                       Manage Employee
-                                    </button>
-                                </h2>
-                                <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show"
-                                    aria-labelledby="panelsStayOpen-headingOne">
-                                    <div class="accordion-body">
-                                        <ul>
-                                            <li>
-                                               <a href="manage.html">View employees</a> 
-                                            </li>
-                                            <!-- <li>
+
+                    </div>
+                </div>
+                <div class="row">
+
+                    <div class="accordion" id="accordionPanelsStayOpenExample">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true"
+                                    aria-controls="panelsStayOpen-collapseOne">
+                                    Manage Employee
+                                </button>
+                            </h2>
+                            <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse"
+                                aria-labelledby="panelsStayOpen-headingOne">
+                                <div class="accordion-body">
+                                    <ul>
+                                        <li>
+                                            <a href="manage.html">View employees</a>
+                                        </li>
+                                        <!-- <li>
                                                 <a href="">add/edit</a> 
                                              </li> -->
-                                        </ul>
-                                    </div>
+                                    </ul>
                                 </div>
                             </div>
-    
                         </div>
+
                     </div>
-    
                 </div>
+
             </div>
             <div class="col-9">
-                    
+
             </div>
         </div>
+        <div class="row text-center">
+            <span class="text-primary " ><img src="https://img.icons8.com/ultraviolet/40/000000/launched-rocket.png"/></span>
+        </div>
     </div>
+
     <script>
+        // const data = null;
+        // let quote=document.querySelector('.quote')
+        // setInterval(()=>{
+        //      const xhr = new XMLHttpRequest();
+        // xhr.withCredentials = true;
+
+        // xhr.addEventListener("readystatechange", function () {
+        //     if (this.readyState === this.DONE) {
+        //         let responseData=JSON.parse(xhr.responseText);
+        //         // console.log(responseData[i++]);
+        //         quote.innerHTML = responseData[Math.floor(Math.random()*responseData.length)]
+        //         // responseData.forEach(value=>{
+        //         //     console.log(value)
+
+        //         // })
+        //     }
+        // });
+
+        // xhr.open("GET", "./movie.json");
+
+        // xhr.send(data);
+        // },5000)
+       
         let canvas = document.getElementById("canvas");
         const ctx = canvas.getContext("2d");
         canvas.width = window.innerWidth;
         canvas.height = window.innerHeight;
         let stars = [];
-        document.addEventListener('resize',()=>{
+        // stars.push({
+        //     x:canvas.width/2,
+        //     y:canvas.height/2,
+        //     raidus:40,
+        //     vx:0,
+        //     vy:0,
+        //     color:"red"
+        // })
+        document.addEventListener('resize', () => {
             canvas.width = window.innerWidth;
             canvas.height = window.innerHeight;
         })
         function star() {
-            
+
             this.x = Math.floor(Math.random() * canvas.width);
             this.y = Math.floor(Math.random() * canvas.height);
-            this.raidus = Math.floor(Math.random() *4);
-            this.vx= Math.floor(Math.random() * 10);
-            this.vy=1;
+            this.raidus = Math.floor(Math.random() * 3);
+            this.vx = Math.floor(Math.random() * 10);
+            this.vy = 2;
+            this.color = `rgba(${Math.floor(Math.random() * 255)},${Math.floor(Math.random() * 255)},${Math.floor(Math.random() * 255)},${Math.floor(Math.random() * 255)})`;
         };
-        let countStars = 1000;
+        let countStars = 2000;
         function createStars() {
-            for(let i = 0; i < countStars; i++) {
+            for (let i = 0; i < countStars; i++) {
                 stars.push(new star());
             }
-            
+
         }
         createStars();
-        function drawStars() { 
+        function drawStars() {
             console.log("hello")
-            
-            ctx.fillStyle = "#151965";
+
+            ctx.fillStyle = `rgba(0,0,0,0.7)`;
             ctx.fillRect(0, 0, canvas.width, canvas.height);
-            ctx.fillStyle = "#46B5D1";
             stars.forEach(star => {
+                ctx.fillStyle = star.color;
                 ctx.beginPath();
                 ctx.arc(star.x, star.y, star.raidus, 0, 2 * Math.PI);
                 // star.moveStars();
                 ctx.fill();
-                if(star.x>canvas.width){
-                    star.x=0;
+                if (star.x > canvas.width) {
+                    star.x = 0;
                 }
-                if(star.y>canvas.height){
-                    star.y=0;}
-                star.x+=star.vx;
-                star.y+=star.vy;
+                if (star.y > canvas.height) {
+                    star.y = 0;
+                }
+                star.x += star.vx / 2;
+                star.y += star.vy / 2;
             })
         }
         setInterval(drawStars, 20);

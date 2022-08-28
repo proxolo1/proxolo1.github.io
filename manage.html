@@ -150,7 +150,7 @@
               height="24"
               class="d-inline-block align-text-top"
             /> -->
-                E-learn
+            <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&pause=1000&width=435&lines=HELLO!;Employee+management+system" alt="Typing SVG" />
             </a>
             <ul class="nav navbar-nav navbar-right mx-4">
                 <li>
@@ -176,7 +176,7 @@
                                     Dashboard
                                 </button>
                             </h2>
-                            <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show"
+                            <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse "
                                 aria-labelledby="panelsStayOpen-headingOne">
                                 <div class="accordion-body">
                                     <ul>
@@ -203,7 +203,7 @@
                                     Manage Employee
                                 </button>
                             </h2>
-                            <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show"
+                            <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse "
                                 aria-labelledby="panelsStayOpen-headingOne">
                                 <div class="accordion-body">
                                     <ul>
@@ -314,8 +314,9 @@
             this.raidus = Math.floor(Math.random() * 4);
             this.vx = Math.floor(Math.random() * 10);
             this.vy = 1;
+            this.color =`#EAE1E1`;
         };
-        let countStars = 1000;
+        let countStars = 2000;
         function createStars() {
             for (let i = 0; i < countStars; i++) {
                 stars.push(new star());
@@ -324,12 +325,12 @@
         }
         createStars();
         function drawStars() {
-            console.log("hello")
+            // console.log("hello")
 
             ctx.fillStyle = backgroundCanvas;
             ctx.fillRect(0, 0, canvas.width, canvas.height);
-            ctx.fillStyle = starColor;
             stars.forEach(star => {
+                ctx.fillStyle = star.color;
                 ctx.beginPath();
                 ctx.arc(star.x, star.y, star.raidus, 0, 2 * Math.PI);
                 // star.moveStars();
@@ -340,8 +341,8 @@
                 if (star.y > canvas.height) {
                     star.y = 0;
                 }
-                star.x += star.vx;
-                star.y += star.vy;
+                star.x += star.vx/2;
+                star.y += star.vy/2;
             })
         }
         setInterval(drawStars, 20);
