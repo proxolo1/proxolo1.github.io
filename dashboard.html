@@ -129,7 +129,7 @@
             </div>
         </div>
         <div class="row text-center">
-            <span class="text-primary " ><img src="https://img.icons8.com/ultraviolet/40/000000/launched-rocket.png"/></span>
+            <span class="text-primary "></span>
         </div>
     </div>
 
@@ -156,7 +156,7 @@
 
         // xhr.send(data);
         // },5000)
-       
+
         let canvas = document.getElementById("canvas");
         const ctx = canvas.getContext("2d");
         canvas.width = window.innerWidth;
@@ -184,6 +184,14 @@
             this.color = `rgba(${Math.floor(Math.random() * 255)},${Math.floor(Math.random() * 255)},${Math.floor(Math.random() * 255)},${Math.floor(Math.random() * 255)})`;
         };
         let countStars = 2000;
+        // stars.push({
+        //     x:0,
+        //     y:canvas.height,
+        //     raidus:10,
+        //     vx:3,
+        //     vy:-2,
+        //     color:"rgba(255,255,255,.3)"
+        // })
         function createStars() {
             for (let i = 0; i < countStars; i++) {
                 stars.push(new star());
@@ -192,14 +200,15 @@
         }
         createStars();
         function drawStars() {
-            console.log("hello")
+            // console.log("hello")
 
-            ctx.fillStyle = `rgba(0,0,0,0.7)`;
+            ctx.fillStyle = `rgba(0,0,0,.8)`;
             ctx.fillRect(0, 0, canvas.width, canvas.height);
+            
             stars.forEach(star => {
                 ctx.fillStyle = star.color;
                 ctx.beginPath();
-                ctx.arc(star.x, star.y, star.raidus, 0, 2 * Math.PI);
+                ctx.arc(star.x, star.y, star.raidus, 0, 2 * Math.PI,true);
                 // star.moveStars();
                 ctx.fill();
                 if (star.x > canvas.width) {
@@ -213,6 +222,7 @@
             })
         }
         setInterval(drawStars, 20);
+     
     </script>
 </body>
 
