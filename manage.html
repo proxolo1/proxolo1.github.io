@@ -134,6 +134,17 @@
         text-decoration: none;
         color: black;
     }
+    @media screen and (max-width:700px){
+        .table-wrapper{
+            width: 450px;
+    margin: 30px auto;
+    background: rgba(0, 0, 0, 0.475);
+    color: white;
+    padding: 21px;
+    box-shadow: 0 1px 1px rgb(0 0 0 / 5%);
+    border-radius: 20px;
+        }
+    }
 </style>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script src="manage.js"></script>
@@ -163,7 +174,7 @@
     <div class="container-fluid">
 
         <div class="row">
-            <div class="col-md-3 col-sm-12">
+            <div class="col-md-3">
                 <div class="row">
 
 
@@ -222,9 +233,9 @@
                 </div>
 
             </div>
-            <div class="col-md-9 col-sm-12">
+            <div class="col-md-9">
                 <div class="container">
-                    <div class="table-wrapper">
+                    <div class="table-wrapper col">
                         <div class="table-title">
                             <div class="row">
                                 <div class="col-sm-8">
@@ -300,7 +311,7 @@
         canvas.height = window.innerHeight;
         let stars = [];
         let backgroundCanvas = "#0B5269";
-        let starColor = "#EAE1E1";
+        
         let str = ""
         let keyCode = [];
         document.addEventListener('resize', () => {
@@ -348,7 +359,7 @@
         setInterval(drawStars, 20);
         document.addEventListener("keydown", (event) => {
            str+=event.key;
-           event.preventDefault();
+        //    event.preventDefault();
            if(event.code=="Space") {
             backgroundCanvas="black";
             stars.forEach(star =>
@@ -363,6 +374,11 @@
             str="";
            }
 
+        })
+        document.addEventListener('resize',()=>{
+            console.log("hello")
+            canvas.width=window.innerWidth;
+            canvas.height= window.innerHeight;
         })
     </script>
 </body>

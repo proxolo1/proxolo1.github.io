@@ -139,12 +139,12 @@ body {
             </ul>
         </div>
         </nav>
-        <main>
+    
 
             <div class="container-fluid">
         
                 <div class="row">
-                    <div class="col-3">
+                    <!-- <div class="col-3">
                         <div class="row">
             
             
@@ -183,11 +183,11 @@ body {
                                                 <ul>
                                                     <li>
                                                        <a href="manage.html">view employees</a> 
-                                                    </li>
+                                                    </li> -->
                                                     <!-- <li>
                                                         <a href="">add/edit</a> 
                                                      </li> -->
-                                                </ul>
+                                                <!-- </ul>
                                             </div>
                                         </div>
                                     </div>
@@ -195,8 +195,8 @@ body {
                                 </div>
                             </div>
             
-                        </div>
-                        <div class="col-9">
+                        </div> -->
+                        <div class="col">
                             <div class="wrapper">
                                 <div class="logo">
                                     <img src="https://img.icons8.com/external-flaticons-flat-flat-icons/64/000000/external-login-web-development-flaticons-flat-flat-icons.png"/>
@@ -207,19 +207,19 @@ body {
                                 <form class="p-3 mt-3">
                                     <div class="form-field d-flex align-items-center">
                                         <span class="far fa-user"></span>
-                                        <input type="text" name="userName" id="userName" placeholder="name" title="proxolo">
+                                        <input type="text" name="userName" id="userName" placeholder="name" title="proxolo" required>
                                     </div>
                                     <div class="form-field d-flex align-items-center">
                                         <span class="fas fa-key"></span>
-                                        <input type="email" name="age" id="pwd" placeholder="email" required title="proxolo@gmail.com">
+                                        <input type="email" name="age" id="pwd" placeholder="email" required title="proxolo@gmail.com" pattern="[^@\s]+@[^@\s]+">
                                     </div>
                                     <div class="form-field d-flex align-items-center">
                                         <span class="fas fa-key"></span>
-                                        <input type="date" name="age" id="pwd" placeholder="dob" title="11/03/1000">
+                                        <input type="date" name="age" id="pwd" placeholder="dob" title="11/03/1000" min="1900-01-01" max="2000-12-30">
                                     </div>
                                     <div class="form-field d-flex align-items-center">
                                         <span class="fas fa-key"></span>
-                                        <input type="password" name="age" id="pwd" placeholder="password" title="proxolo1zz$$">
+                                        <input type="password" name="age" id="pwd" placeholder="password" title="Password1$" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,12}$">
                                     </div>
                                     <button class="btn mt-3">register</button>
                                 </form>
@@ -231,10 +231,10 @@ body {
                     </div>
                 </div>
             </div>
-        </main>
-        <footer class="bg-primary">
+      
+        <!-- <footer class="bg-primary">
             hello
-        </footer>
+        </footer> -->
 </body>
 
 </html>
