@@ -35,104 +35,9 @@
         font-family: 'Open Sans', sans-serif;
     }
 
-    .table-wrapper {
-        margin: 30px auto;
-        /* background: rgba(0, 0, 0, 0.475); */
-        color: white;
-        padding: 20px;
-        box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
-        border-radius: 20px;
-    }
-
-    .table-title {
-        padding-bottom: 10px;
-        margin: 0 0 10px;
-    }
-
-    .table-title h2 {
-        margin: 6px 0 0;
-        font-size: 22px;
-    }
-
-    .table-title .add-new {
-        float: right;
-        height: 30px;
-        font-weight: bold;
-        font-size: 12px;
-        text-shadow: none;
-        min-width: 100px;
-        border-radius: 50px;
-        line-height: 13px;
-    }
-
-    .table-title .add-new i {
-        margin-right: 4px;
-    }
-
-    table.table {
-        /* table-layout: fixed; */
-        color: black;
-    }
-
-    table.table tr th,
-    table.table tr td {
-        border-color: #e9e9e9;
-    }
-
-    table.table th i {
-        font-size: 13px;
-        /* margin: 0 5px; */
-        cursor: pointer;
-    }
-
-    table.table th:last-child {
-        width: 100px;
-    }
-
-    table.table td a {
-        cursor: pointer;
-        display: inline-block;
-        /* margin: 0 5px; */
-        min-width: 24px;
-    }
-
-    table.table td a.add {
-        color: #27C46B;
-    }
-
-    table.table td a.edit {
-        color: #FFC107;
-    }
-
-    table.table td a.delete {
-        color: #E34724;
-    }
-
-    table.table td i {
-        font-size: 19px;
-    }
-
-    table.table td a.add i {
-        font-size: 24px;
-        margin-right: -1px;
-        position: relative;
-        top: 3px;
-    }
-
-    table.table .form-control {
-        height: 32px;
-        line-height: 32px;
-        box-shadow: none;
-        border-radius: 2px;
-    }
-
-    table.table .form-control.error {
-        border-color: #f50000;
-    }
-
-    table.table td .add {
-        display: none;
-    }
+  .card{
+    width: 50vh;
+  }
 
     a,
     li {
@@ -140,26 +45,13 @@
         text-decoration: none;
         color: black;
     }
-    .attention{
-        width:4vh;
-    }
 
-    @media screen and (max-width:700px) {
-        .table-wrapper {
-            width: 450px;
-            margin: 30px auto;
-            background: rgba(0, 0, 0, 0.475);
-            color: white;
-            padding: 21px;
-            box-shadow: 0 1px 1px rgb(0 0 0 / 5%);
-            border-radius: 20px;
-        }
-    }
+  
 </style>
 
 <body>
     <canvas id="canvas"></canvas>
-    <nav class="navbar bg-transparent border">
+    <nav class="navbar bg-transparent">
         <div class="container-fluid">
             <a class="navbar-brand text-white" href="#">
                 <!-- <img
@@ -183,18 +75,18 @@
     <div class="container-fluid">
 
         <div class="row">
-            <div class="col-md-3 border">
+            <div class="col-md-3 vh-100 bg-light">
                 <div class="row">
                     <div class="accordion" id="accordionPanelsStayOpenExample">
                         <div class="accordion-item">
-                            <h2 class="accordion-header" id="headingOne">
+                            <h2 class="accordion-header" id="panelsStayOpen-headingOne">
                                 <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#collapseOne" aria-expanded="true"
-                                    aria-controls="collapseOne">
+                                    data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true"
+                                    aria-controls="panelsStayOpen-collapseOne">
                                     Home
                                 </button>
                             </h2>
-                            <div id="collapseOne" class="accordion-collapse collapse"
+                            <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse"
                                 aria-labelledby="panelsStayOpen-headingOne">
                                 <div class="accordion-body">
                                     <ul>
@@ -212,12 +104,12 @@
                         <div class="accordion-item">
                             <h2 class="accordion-header" id="panelsStayOpen-headingOne">
                                 <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#collapseTwo" aria-expanded="true"
+                                    data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true"
                                     aria-controls="panelsStayOpen-collapseOne">
                                     Employee Module
                                 </button>
                             </h2>
-                            <div id="collapseTwo" class="accordion-collapse collapse"
+                            <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse"
                                 aria-labelledby="panelsStayOpen-headingOne">
                                 <div class="accordion-body">
                                     <ul>
@@ -238,12 +130,12 @@
                         <div class="accordion-item">
                             <h2 class="accordion-header" id="panelsStayOpen-headingOne">
                                 <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#collapseThree" aria-expanded="true"
+                                    data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true"
                                     aria-controls="panelsStayOpen-collapseOne">
                                     Project
                                 </button>
                             </h2>
-                            <div id="collapseThree" class="accordion-collapse collapse"
+                            <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse"
                                 aria-labelledby="panelsStayOpen-headingOne">
                                 <div class="accordion-body">
                                     <ul>
@@ -288,72 +180,35 @@
                 </div>
             </div>
             <div class="col-md-9">
-                <div class="container border">
-                    <div class="table-wrapper col">
-                        <div class="table-title">
+                <div class="container">
+                    <div class="card mx-5 text-center">
+                        
+                        <div class="card-body">
                             <div class="row">
-                                <div class="col-sm-8">
-                                    <h2>Employee <b>Details</b></h2>
-                                </div>
-                                <div class="col-sm-4">
-                                    <button type="button" class="btn btn-outline-light add-new"
-                                        onclick="location.href='./add-employee.html'"><i class="fa fa-plus"></i> Add
-                                        New</button>
-                                </div>
+                               <div class="col">
+                                <img class="dp" alt="">
+                               </div>
                             </div>
+                          <h5 class="card-title text-capitalize text-dark"></h5>
+                          <p class="card-text text-dark">Email : <a class="email text-primary"></a></p>
+                          <p class="text-dark">Project : <span class="project text-success"></span></p>
+                          <p class="text-dark">Phone number : <span class="phone text-success"></span></p>
+                          <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
                         </div>
-                        <table class="table table-bordered text-white bg-opacity-75 bg-dark  text-capitalize">
-                            <thead>
-                                <tr>
-                                    <th>Id </th>
-                                    <th>Name</th>
-                                    <th>project</th>
-                                    <th>Phone</th>
-                                    <th>Actions</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                              
-                            </tbody>
-                        </table>
-                    </div>
+                      </div>
                 </div>
             </div>
         </div>
     </div>
-    </div>
-
-    <!-- modal of delete -->
-    <!-- Button trigger modal -->
-
-  <!-- Modal -->
-  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title text-center" id="exampleModalLabel"><img class="attention" src="./icons/icons8-box-important.gif" alt=""></h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body text-danger">
-         ARE YOU SURE YOU WANT TO DO THIS?
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-success" data-bs-dismiss="modal">NO</button>
-          <button type="button" class="btn btn-danger" data-bs-dismiss="modal" onclick="deleteEmployee()">YES</button>
-        </div>
-      </div>
-    </div>
-  </div>
 </body>
 
 </html>
 
-<script src="manage.js"></script>
 <script>
     let canvas = document.getElementById("canvas");
     const ctx = canvas.getContext("2d");
-    canvas.width = window.outerWidth;
-    canvas.height = window.outerHeight;
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
     let stars = [];
     let backgroundCanvas = "black";
 
@@ -430,6 +285,27 @@
         canvas.width = window.innerWidth;
         canvas.height = window.innerHeight;
     })
+</script>
+<script>
+    let params = (new URL(document.location)).searchParams;
+    const id = params.get("id");
+    
+    const xhr = new XMLHttpRequest();
+    xhr.open("GET", `http://localhost:8080/get-employee/${id}`);
+    xhr.send();
+    xhr.onload = function () {
+        let employee = JSON.parse(this.responseText);
+        document.querySelector('.card-title').innerHTML = employee.name;
+        let email=document.querySelector('.email');
+        email.innerHTML = employee.email;
+        email.href = `mailto:${employee.email}`;
+        document.querySelector('.project').innerHTML = employee.project;
+        document.querySelector('.phone').innerHTML = employee.phoneNumber;
+        let dp=document.querySelector('.dp');
+        dp.src=`https://avatars.dicebear.com/api/croodles/${employee.name}.svg`;
+        dp.style.width='12vh';
+    }
+    
 </script>
 </body>
 

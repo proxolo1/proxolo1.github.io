@@ -1,89 +1,96 @@
-$(document).ready(function () {
-  $('[data-toggle="tooltip"]').tooltip();
-  var actions = $("table td:last-child").html();
-  // Append table with add row form on add new button click
-  $(".add-new").click(function () {
-    $(this).attr("disabled", "disabled");
-    var index = $("table tbody tr:last-child").index();
-    var row =
-      "<tr>" +
-      '<td><input type="text" class="form-control" name="name" id="name"></td>' +
-      '<td><input type="text" class="form-control" name="department" id="department"></td>' +
-      '<td><input type="text" class="form-control" name="phone" id="phone"></td>' +
-      "<td>" +
-      actions +
-      "</td>" +
-      "</tr>";
-    $("table").append(row);
-    $("table tbody tr")
-      .eq(index + 1)
-      .find(".add, .edit")
-      .toggle();
-    $('[data-toggle="tooltip"]').tooltip();
-  });
+let employeeData,deleteId;
+loadEmployeeTable();
 
-  // Add row on add button click
-  $(document).on("click", ".add", function () {
-    var empty = false;
-    var input = $(this).parents("tr").find('input[type="text"]');
-    input.each(function () {
-      if (!$(this).val()) {
-        $(this).addClass("error");
-        empty = true;
-      } else {
-		
-        $(this).removeClass("error");
-      }
-    });
-    $(this).parents("tr").find(".error").first().focus();
-    if (!empty) {
-      input.each(function () {
-        $(this).parent("td").html($(this).val());
-      });
-      $(this).parents("tr").find(".add, .edit").toggle();
-      $(".add-new").removeAttr("disabled");
-    }
-  });
-  // Edit row on edit button click
-  $(document).on("click", ".edit", function () {
-    $(this)
-      .parents("tr")
-      .find("td:not(:last-child)")
-      .each(function () {
-        $(this).html(
-          '<input type="text" class="form-control" value="' +
-            $(this).text() +
-            '">'
-        );
-      });
-    $(this).parents("tr").find(".add, .edit").toggle();
-    $(".add-new").attr("disabled", "disabled");
-  });
-  // Delete row on delete button click
-  $(document).on("click", ".delete", function () {
-	
-    $(this).parents("tr").remove();
-    $(".add-new").removeAttr("disabled");
-  });
-});
+function loadEmployeeTable() {
 
-function loadData() {
+  const url="http://localhost:8080/get-employees";
+  let tableBody = document.querySelector("tbody");
+  tableBody.innerHTML=null;
   const xhr = new XMLHttpRequest();
   xhr.onload = function () {
     // console.log(this.responseText);
-    let data = JSON.parse(this.responseText);
-    data.forEach((employee) => {
-      $("table tbody")
-        .append(`<tr><td>${employee.name}</td><td>${employee.project}</td><td>${employee.phone}</td><td> <a class="add" title="Add" data-toggle="tooltip"><i
-		class="material-icons">&#xE03B;</i></a>
-<a class="edit" title="Edit" data-toggle="tooltip"><i
-		class="material-icons">&#xE254;</i></a>
-<a class="delete" title="Delete" data-toggle="tooltip"><i
-		class="material-icons">&#xE872;</i></a></td></tr>`);
+    employeeData = JSON.parse(this.responseText);
+    employeeData.forEach((employee) => {
+
+      let row = document.createElement("tr");
+      let employeeId=document.createElement("td");
+      let employeeName = document.createElement("td");
+      let employeeProject = document.createElement("td");
+      let employeePhone = document.createElement("td");
+      let action = document.createElement("td");
+      employeeId.innerHTML=`${employee.empId}`;
+      employeeName.innerHTML = `${employee.name}`;
+      employeeProject.innerHTML = `${employee.project}`;
+      employeePhone.innerHTML = `${employee.phoneNumber}`;
+      action.innerHTML = `<td> 
+   <a onClick=viewEmployee(${employee.empId}) data-toggle="tooltip" title="view"><img src="https://img.icons8.com/ios-glyphs/20/FFFFFF/view-file.png"/></a>
+  <a class="edit" title="Edit" data-toggle="tooltip" onClick="editEmployee(${employee.empId})"><img src="https://img.icons8.com/sf-black-filled/20/FFFFFF/edit.png"/></a>
+  <a onclick="deleteInit(${employee.empId})" class="delete" title="Delete" data-toggle="tooltip" data-bs-toggle="modal" data-bs-target="#exampleModal"><i
+      class="material-icons"><img src="https://img.icons8.com/material-rounded/20/FFFFFF/trash.png"/></i></a></td>`;
+      row.append(employeeId);
+      row.append(employeeName);
+      row.append(employeeProject);
+      row.append(employeePhone);
+      row.append(action);
+      tableBody.append(row);
     });
   };
-  xhr.open("GET", "./employee.json");
+  xhr.open("GET", url);
   xhr.send();
 }
 
-loadData();
+
+function addEmployee() {
+  let employee = {}
+  // let inputs = document.querySelectorAll("input");
+  let name = document.getElementById('name');
+  let email = document.getElementById('email');
+  let phone = document.getElementById('phone');
+  var project = document.querySelector("#project");
+  var option = project.options[project.selectedIndex];
+  var url = "https://api/post"
+  console.log(name.value, email.value, phone.value)
+  employee.name = name.value
+  employee.email = email.value
+  employee.project = option.value
+  employee.phone = phone.value
+
+  const xhr = new XMLHttpRequest();
+  xhr.open('POST', "http://localhost:8080/employee", true)
+  xhr.setRequestHeader('content-type', 'application/json; charset=UTF-8')
+  xhr.send(JSON.stringify(employee))
+  xhr.onload = function () {
+    if (xhr.status === 201) {
+      console.log('post successfully created')
+    }
+  }
+}
+
+function deleteEmployee() {
+    const xhr = new XMLHttpRequest();
+    xhr.open("DELETE", `http://localhost:8080/delete-employee/${deleteId}`);
+    xhr.send();
+    xhr.onload=function () {
+      console.log(this);
+      loadEmployeeTable();
+    }
+}
+function editEmployee(id) {
+  location.href="edit-employee.html?id="+id;
+}
+// function edit(event) {
+//   let coloum = event.path[3].cells;
+//   let editArr = [document.getElementById('edit_name'), document.getElementById('edit_project'), document.getElementById('edit_phone')]
+//   for (let i = 0; i < coloum.length - 1; i++) {
+//     console.log(coloum[i].innerText)
+//     editArr[i].value = coloum[i+1].innerText;
+//   }
+
+// }
+function viewEmployee(id){
+  location.href="viewEmployee.html?id="+id;
+}
+
+function deleteInit(id) {
+  deleteId=id;
+}

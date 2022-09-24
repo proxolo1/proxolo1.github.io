@@ -1,18 +1,32 @@
 [{
+    "id":1,
     "name":"ajay",
     "project":"delivery",
-    "phone":"8542155477"
+    "phone":"8542155477",
+    "email":"ajay.santhosh@ust.com"
 },
 {
+    "id":2,
     "name":"albin",
     "project":"enterprise",
-    "phone":"4154421451"
+    "phone":"4154421451",
+    "email":"albin@ust.com"
 },{
+    "id":3,
     "name":"mithun",
     "project":"red hat",
-    "phone":"8542155477"
+    "phone":"8542155477",
+    "email":"mithun@ust.com"
 },{
+    "id":4,
     "name":"reema",
     "project":"delivery custom build",
-    "phone":"6282845070"
+    "phone":"6282845070",
+    "email":"reema@ust.com"
+},{
+    "id":5,
+    "name":"anjitha",
+    "project":"delivery",
+    "phone":"4154421451",
+    "email":"anjitha@ust.com"
 }]

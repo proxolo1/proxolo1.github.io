@@ -1,0 +1,14 @@
+{
+  "name": "employee",
+  "version": "1.0.0",
+  "description": "employee management system",
+  "main": "index.js",
+  "scripts": {
+    "test": "testr"
+  },
+  "keywords": [
+    "nothing"
+  ],
+  "author": "ajay",
+  "license": "MIT"
+}

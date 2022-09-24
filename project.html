@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+        crossorigin="anonymous"></script>
+</head>
+<style>
+    input{
+        margin-bottom: 2vh;
+    }
+    .row {
+        margin-top: 20px
+    }
+
+    #canvas {
+        position: absolute;
+        top: 0;
+        z-index: -9999;
+        /* filter: blur(2px) */
+    }
+
+    body {
+        color: white;
+        background: #F5F7FA;
+        font-family: 'Open Sans', sans-serif;
+    }
+
+    .table-wrapper {
+        width: 700px;
+        margin: 30px auto;
+        background: rgba(0, 0, 0, 0.475);
+        color: white;
+        padding: 20px;
+        box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
+        border-radius: 20px;
+    }
+
+    .table-title {
+        padding-bottom: 10px;
+        margin: 0 0 10px;
+    }
+
+    .table-title h2 {
+        margin: 6px 0 0;
+        font-size: 22px;
+    }
+
+    .table-title .add-new {
+        float: right;
+        height: 30px;
+        font-weight: bold;
+        font-size: 12px;
+        text-shadow: none;
+        min-width: 100px;
+        border-radius: 50px;
+        line-height: 13px;
+    }
+
+    .table-title .add-new i {
+        margin-right: 4px;
+    }
+
+    table.table {
+        table-layout: fixed;
+        color: white;
+    }
+
+    table.table tr th,
+    table.table tr td {
+        border-color: #e9e9e9;
+    }
+
+    table.table th i {
+        font-size: 13px;
+        margin: 0 5px;
+        cursor: pointer;
+    }
+    e.table th:last-child {
+        width: 100px;
+    }
+
+    table.table td a {
+        cursor: pointer;
+        display: inline-block;
+        margin: 0 5px;
+        min-width: 24px;
+    }
+
+    table.table td a.add {
+        color: #27C46B;
+    }
+
+    table.table td a.edit {
+        color: #FFC107;
+    }
+
+    table.table td a.delete {
+        color: #E34724;
+    }
+
+    table.table td i {
+        font-size: 19px;
+    }
+
+    table.table td a.add i {
+        font-size: 24px;
+        margin-right: -1px;
+        position: relative;
+        top: 3px;
+    }
+
+    table.table .form-control {
+        height: 32px;
+        line-height: 32px;
+        box-shadow: none;
+        border-radius: 2px;
+    }
+
+    table.table .form-control.error {
+        border-color: #f50000;
+    }
+
+    table.table td .add {
+        display: none;
+    }
+    a,li{
+        list-style: none;
+        text-decoration: none;
+        color: black;
+    }
+    @media screen and (max-width:700px){
+        .table-wrapper{
+            width: 450px;
+    margin: 30px auto;
+    background: rgba(0, 0, 0, 0.475);
+    color: white;
+    padding: 21px;
+    box-shadow: 0 1px 1px rgb(0 0 0 / 5%);
+    border-radius: 20px;
+        }
+    }
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+
+<body>
+    <canvas id="canvas"></canvas>
+    <nav class="navbar bg-transparent">
+        <div class="container-fluid">
+            <a class="navbar-brand text-white" href="#">
+                <!-- <img
+              src="../icons/bootstrap-logo.svg"
+              alt=""
+              width="30"
+              height="24"
+              class="d-inline-block align-text-top"
+            /> -->
+            <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&pause=1000&width=435&lines=HELLO!;Employee+management+system" alt="Typing SVG" />
+            </a>
+            <ul class="nav navbar-nav navbar-right mx-4">
+                <li>
+                    <a class="btn btn-outline-light" href="login.html"><span class="glyphicon glyphicon-log-in">Login
+                            out</span> </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container-fluid">
+
+        <div class="row">
+            <div class="col-md-3 vh-100 bg-light">
+                <div class="row">
+                  <div class="accordion" id="accordionPanelsStayOpenExample">
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+                        <button
+                          class="accordion-button"
+                          type="button"
+                          data-bs-toggle="collapse"
+                          data-bs-target="#panelsStayOpen-collapseOne"
+                          aria-expanded="true"
+                          aria-controls="panelsStayOpen-collapseOne"
+                        >
+                          Home
+                        </button>
+                      </h2>
+                      <div
+                        id="panelsStayOpen-collapseOne"
+                        class="accordion-collapse collapse"
+                        aria-labelledby="panelsStayOpen-headingOne"
+                      >
+                        <div class="accordion-body">
+                          <ul>
+                            <li>
+                              <a href="dashboard.html">Dashboard</a>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="accordion" id="accordionPanelsStayOpenExample">
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+                        <button
+                          class="accordion-button"
+                          type="button"
+                          data-bs-toggle="collapse"
+                          data-bs-target="#panelsStayOpen-collapseOne"
+                          aria-expanded="true"
+                          aria-controls="panelsStayOpen-collapseOne"
+                        >
+                        Employee Module
+                        </button>
+                      </h2>
+                      <div
+                        id="panelsStayOpen-collapseOne"
+                        class="accordion-collapse collapse"
+                        aria-labelledby="panelsStayOpen-headingOne"
+                      >
+                        <div class="accordion-body">
+                          <ul>
+                            <li>
+                              <a href="manage.html">View employees</a>
+                            </li>
+                            <!-- <li>
+                                                      <a href="">add/edit</a> 
+                                                   </li> -->
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="accordion" id="accordionPanelsStayOpenExample">
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+                        <button
+                          class="accordion-button"
+                          type="button"
+                          data-bs-toggle="collapse"
+                          data-bs-target="#panelsStayOpen-collapseOne"
+                          aria-expanded="true"
+                          aria-controls="panelsStayOpen-collapseOne"
+                        >
+                          Project
+                        </button>
+                      </h2>
+                      <div
+                        id="panelsStayOpen-collapseOne"
+                        class="accordion-collapse collapse"
+                        aria-labelledby="panelsStayOpen-headingOne"
+                      >
+                        <div class="accordion-body">
+                          <ul>
+                            <li>
+                              <a href="manage.html">Project Details</a>
+                              
+                            </li>
+                            <!-- <li>
+                                                      <a href="">add/edit</a> 
+                                                   </li> -->
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="accordion" id="accordionPanelsStayOpenExample">
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+                        <button
+                          class="accordion-button"
+                          type="button"
+                          data-bs-toggle="collapse"
+                          data-bs-target="#panelsStayOpen-collapseOne"
+                          aria-expanded="true"
+                          aria-controls="panelsStayOpen-collapseOne"
+                        >
+                          Report
+                        </button>
+                      </h2>
+                      <div
+                        id="panelsStayOpen-collapseOne"
+                        class="accordion-collapse collapse"
+                        aria-labelledby="panelsStayOpen-headingOne"
+                      >
+                        <div class="accordion-body">
+                          <ul>
+                            <li>
+                              <a href="manage.html"></a>
+                            </li>
+                            <!-- <li>
+                                                      <a href="">add/edit</a> 
+                                                   </li> -->
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            <div class="col-md-9">
+                <div class="container">
+                    <div class="table-wrapper col">
+                        <div class="table-title">
+                            <div class="row">
+                                <div class="col-sm-8">
+                                    <h2>Project <b>Details</b></h2>
+                                </div>
+                                <div class="col-sm-4">
+                                    <button type="button" class="btn btn-outline-light add-new" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa fa-plus"></i> Add
+                                        New</button>
+                                </div>
+                            </div>
+                        </div>
+                        <table class="table table-bordered text-capitalize">
+                            <thead>
+                                <tr>
+                                    <th>projectId</th>
+                                    <th>projectName</th>
+                                    <th>Allocation</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- <tr>
+                                    <td>723351</td>
+                                    <td>Administration</td>
+                                    <td>Trivandrum</td>
+                                    <td>
+                                        <a class="add" title="Add" data-toggle="tooltip"><i
+                                                class="material-icons">&#xE03B;</i></a>
+                                        <a class="edit" title="Edit" data-toggle="tooltip"><i
+                                                class="material-icons">&#xE254;</i></a>
+                                        <a class="delete" title="Delete" data-toggle="tooltip"><i
+                                                class="material-icons">&#xE872;</i></a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>125552</td>
+                                    <td>Customer Service</td>
+                                    <td>Kochi</td>
+                                    <td>
+                                        <a class="add" title="Add" data-toggle="tooltip"><i
+                                                class="material-icons">&#xE03B;</i></a>
+                                        <a class="edit" title="Edit" data-toggle="tooltip"><i
+                                                class="material-icons">&#xE254;</i></a>
+                                        <a class="delete" title="Delete" data-toggle="tooltip"><i
+                                                class="material-icons">&#xE872;</i></a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>844223</td>
+                                    <td>Human Resources</td>
+                                    <td>Banglore</td>
+                                    <td>
+                                        <a class="add" title="Add" data-toggle="tooltip"><i
+                                                class="material-icons">&#xE03B;</i></a>
+                                        <a class="edit" title="Edit" data-toggle="tooltip"><i
+                                                class="material-icons">&#xE254;</i></a>
+                                        <a class="delete" title="Delete" data-toggle="tooltip"><i
+                                                class="material-icons">&#xE872;</i></a>
+                                    </td>
+                                </tr> -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <div class=" text-dark modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog ">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title text-primary" id="exampleModalLabel">Add project</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <div class="container">
+                <form id="contact" action="" method="post">
+                    <fieldset>
+                      <input id="name"
+                        placeholder="Project name"
+                        type="text"
+                        tabindex="1"
+                        required
+                        autofocus
+                      />
+                    </fieldset>
+                    <fieldset>
+                      <input id="alloc"
+                        placeholder=" Allocation"
+                        type="text"
+                        tabindex="2"
+                        required
+                      />
+                    </fieldset>
+                    <!-- <fieldset>
+                      <input
+                        placeholder=" Phone Number"
+                        type="tel"
+                        tabindex="3"
+                        required
+                      />
+                    </fieldset> -->
+                    <fieldset>
+                       
+                    </fieldset>
+                    <fieldset>
+                      <!-- <textarea
+                        placeholder="Type your Message Here...."
+                        tabindex="5"
+                        required
+                      ></textarea>
+                    </fieldset> -->
+                    <!-- <fieldset>
+                      <button
+                        name="submit"
+                        type="submit"
+                        id="contact-submit"
+                        data-submit="...Sending"
+                      >
+                        Submit
+                      </button>
+                    </fieldset> -->
+                  </form>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    <script>
+        let canvas = document.getElementById("canvas");
+        const ctx = canvas.getContext("2d");
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        let stars = [];
+        let backgroundCanvas = "black";
+        
+        let str = ""
+        let keyCode = [];
+        document.addEventListener('resize', () => {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        })
+        function star() {
+
+            this.x = Math.floor(Math.random() * canvas.width);
+            this.y = Math.floor(Math.random() * canvas.height);
+            this.raidus = Math.floor(Math.random() * 4);
+            this.vx = Math.floor(Math.random() * 10);
+            this.vy = 1;
+            this.color =`rgba(255,255,255,.5)`;
+            this.direction=Math.PI*.5;
+        };
+        let countStars = 2000;
+       
+        function createStars() {
+            for (let i = 0; i < countStars; i++) {
+                stars.push(new star());
+            }
+
+        }
+        createStars();
+        function drawStars() {
+            // console.log("hello")
+
+            ctx.fillStyle = backgroundCanvas;
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            stars.forEach(star => {
+                ctx.fillStyle = star.color;
+                ctx.beginPath();
+                ctx.arc(star.x, star.y, star.raidus, 0,  star.direction);
+                // star.moveStars();
+                ctx.fill();
+                if (star.x > canvas.width) {
+                    star.x = 0;
+                }
+                if (star.y > canvas.height) {
+                    star.y = 0;
+                }
+                if(star.y<0){
+                    star.y=canvas.height;
+                }
+                star.x += star.vx/2;
+                star.y +=star.vy;
+            })
+        }
+        setInterval(drawStars, 20);
+        // document.addEventListener("keydown", (event) => {
+        //    str+=event.key;
+        // //    event.preventDefault();
+        //    if(event.code=="Space") {
+        //     backgroundCanvas="#0B5269";
+        //     stars.forEach(star =>
+        //     star.color="black")
+        //     str="";
+        //     // alert("dark mode activated")
+        //    }
+        //    else if(event.altKey) {
+        //     backgroundCanvas="black";
+        //     stars.forEach(star =>
+        //     star.color="white")
+        //     str="";
+        //    }
+
+        // })
+        document.addEventListener('resize',()=>{
+            console.log("hello")
+            canvas.width=window.innerWidth;
+            canvas.height= window.innerHeight;
+        })
+
+    </script>
+    <script>
+      function projectTable(){
+        let tbody=document.querySelector("tbody")
+        let xml=new XMLHttpRequest()
+        xml.open("GET","./project.json")
+        xml.send()
+        xml.onload=function(){
+          let projectdata=JSON.parse(this.responseText)
+          projectdata.forEach((project)=>{
+            let row=document.createElement('tr')
+            let projectid=document.createElement('td')
+            let projectname=document.createElement('td')
+            let allocation=document.createElement('td')
+            let action=document.createElement('td')
+            projectid.innerHTML=`${project.projectId}`
+            projectname.innerHTML=`${project.projectName}`
+            allocation.innerHTML=`${project.allocation}`
+            action.innerHTML=`<td> 
+              
+  <a class="edit" title="Edit" data-bs-toggle="modal" data-bs-target="#employeeEdit" data-toggle="tooltip" onClick="edit(event)"><i
+      class="material-icons">&#xE254;</i></a>
+  <a onclick="deleteproject(event)" class="delete" title="Delete" data-toggle="tooltip"><i
+      class="material-icons">&#xE872;</i></a></td>`;
+      row.append(projectid)
+      row.append(projectname)
+      row.append(allocation)
+      row.append(action)
+      tbody.append(row)
+          } )
+        }
+      }
+projectTable()
+function deleteproject(event){
+// console.log(event.path[3])
+event.path[3].innerHTML=null
+}
+
+
+    </script>
+</body>
+
+</html>

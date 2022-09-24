@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous" />
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+    crossorigin="anonymous"></script>
+</head>
+<style>
+  @import url(https://fonts.googleapis.com/css?family=Open+Sans:400italic,400,300,600);
+
+  .row {
+    margin-top: 20px;
+  }
+  input, select,form button {
+  width: 100%; /* Full width */
+  padding: 12px; /* Some padding */ 
+  border: 1px solid #ccc; /* Gray border */
+  border-radius: 4px; /* Rounded borders */
+  box-sizing: border-box; /* Make sure that padding and width stays in place */
+  margin-top: 6px; /* Add a top margin */
+  margin-bottom: 16px; /* Bottom margin */
+  resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */
+}
+</style>
+
+<body>
+  <nav class="navbar bg-light bg-transparent">
+    <div class="container-fluid">
+      <a class="navbar-brand text-white" href="#">
+        <img
+          src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&pause=1000&width=435&lines=HELLO!;Employee+management+system"
+          alt="Typing SVG" />
+        <!-- <img
+                src="../icons/bootstrap-logo.svg"
+                alt=""
+                width="30"
+                height="24"
+                class="d-inline-block align-text-top"
+              /> -->
+        <!-- Employee mangagement -->
+      </a>
+      <ul class="nav navbar-nav navbar-right mx-4">
+        <li>
+          <a class="btn btn-outline-primary" href="login.html"><span
+              class="glyphicon text-white glyphicon-log-in">Logout</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-3 vh-100 bg-light">
+        <div class="row">
+          <div class="accordion" id="accordionPanelsStayOpenExample">
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true"
+                  aria-controls="panelsStayOpen-collapseOne">
+                  Home
+                </button>
+              </h2>
+              <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse"
+                aria-labelledby="panelsStayOpen-headingOne">
+                <div class="accordion-body">
+                  <ul>
+                    <li>
+                      <a href="dashboard.html">Dashboard</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="accordion" id="accordionPanelsStayOpenExample">
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true"
+                  aria-controls="panelsStayOpen-collapseOne">
+                  Employee Module
+                </button>
+              </h2>
+              <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse"
+                aria-labelledby="panelsStayOpen-headingOne">
+                <div class="accordion-body">
+                  <ul>
+                    <li>
+                      <a href="manage.html">View employees</a>
+                    </li>
+                    <!-- <li>
+                                                  <a href="">add/edit</a> 
+                                               </li> -->
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="accordion" id="accordionPanelsStayOpenExample">
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true"
+                  aria-controls="panelsStayOpen-collapseOne">
+                  Project
+                </button>
+              </h2>
+              <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse"
+                aria-labelledby="panelsStayOpen-headingOne">
+                <div class="accordion-body">
+                  <ul>
+                    <li>
+                      <a href="project.html">Project Details</a>
+                    </li>
+                    <!-- <li>
+                                                  <a href="">add/edit</a> 
+                                               </li> -->
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="accordion" id="accordionPanelsStayOpenExample">
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true"
+                  aria-controls="panelsStayOpen-collapseOne">
+                  Report
+                </button>
+              </h2>
+              <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse"
+                aria-labelledby="panelsStayOpen-headingOne">
+                <div class="accordion-body">
+                  <ul>
+                    <li>
+                      <a href="manage.html"></a>
+                    </li>
+                    <!-- <li>
+                                                  <a href="">add/edit</a> 
+                                               </li> -->
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-9">
+        <div class="container">
+
+
+          <form action="manage.html">
+            <label for="name">Name</label>
+         <input type="text" name="" id="name" placeholder="enter full name" required>
+         <label for="email">Email</label>
+         <input type="email" name="" id="email" placeholder="enter email" required>
+         <label for="phone">Phone number</label>
+         <input type="tel" name="" id="phone" placeholder="enter phone number" required>
+         <label for="project">projects</label>
+         <select name="" id="project">
+           <option value="JAVA">JAVA</option>
+           <option value="PYTHON">PYTHON</option>
+           <option value="NODE JS">NODE JS</option>
+           <option value="DOT NET">DOT NET</option>
+         </select>
+         <button type="submit" class="btn btn-outline-dark" onclick="updateEmployee()">submit</button>
+         </form>
+        
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    let params = (new URL(document.location)).searchParams;
+    const id = params.get("id");
+    let employee, name, email, project, phone;
+    let url = `http://localhost:8080/get-employee/${id}`;
+    init();
+    function init() {
+      const xhr = new XMLHttpRequest();
+      xhr.open("GET", url);
+      xhr.send();
+      xhr.onload = function () {
+        employee = JSON.parse(this.responseText);
+        name = document.getElementById("name");
+        email = document.getElementById("email");
+        project = document.getElementById("project");
+        phone = document.getElementById("phone");
+        name.value = employee.name;
+        email.value = employee.email;
+        project.value = employee.project
+        phone.value = employee.phoneNumber;
+      }
+    }
+
+    function updateEmployee() {
+      let employee = new Object({
+        name: name.value,
+        email: email.value,
+        project: project.value,
+        phoneNumber: phone.value
+      });
+      let url = `http://localhost:8080/update-employee/${id}`;
+      const xhr = new XMLHttpRequest();
+      xhr.open('PUT', url, true);
+      xhr.setRequestHeader('Content-type', 'application/json; charset=UTF-8')
+      xhr.send(JSON.stringify(employee));
+
+      xhr.onload = function () {
+        console.log(this);
+        location.href = "./manage.html";
+
+      }
+      xhr.onerror= function(){
+        console.log(this);
+
+      }
+    }
+
+  </script>
+</body>
+
+</html>

@@ -1,230 +1,322 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>dashboard</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
-        crossorigin="anonymous"></script>
-</head>
-<style>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <style>
+    .welcome{
+      font-size: 20vh;
+      color: black !important;
+    }
     .row {
-        margin-top: 20px
+      margin-top: 20px;
     }
 
     #canvas {
-        position: absolute;
-        top: 0;
-        z-index: -9999;
-        /* filter: blur(2px) */
+      position: absolute;
+      top: 0;
+      z-index: -9999;
+      /* filter: blur(2px) */
     }
 
     a {
-        text-decoration: none;
-        color: black;
-        font-weight: light;
+      text-decoration: none;
+      color: black;
+      font-weight: light;
     }
 
     li {
-        list-style: none;
+      list-style: none;
     }
-</style>
+  </style>
 
-<body>
+  <body>
     <nav class="navbar bg-light bg-transparent">
-        <div class="container-fluid">
-            <a class="navbar-brand text-white" href="#">
-                <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&pause=1000&width=435&lines=HELLO!;Employee+management+system"
-                    alt="Typing SVG" />
-                <!-- <img
+      <div class="container-fluid">
+        <a class="navbar-brand text-white" href="#">
+          <img
+            src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&pause=1000&width=435&lines=HELLO!;Employee+management+system"
+            alt="Typing SVG"
+          />
+          <!-- <img
               src="../icons/bootstrap-logo.svg"
               alt=""
               width="30"
               height="24"
               class="d-inline-block align-text-top"
             /> -->
-                <!-- Employee mangagement -->
+          <!-- Employee mangagement -->
+        </a>
+        <ul class="nav navbar-nav navbar-right mx-4">
+          <li>
+            <a class="btn btn-outline-primary" href="login.html"
+              ><span class="glyphicon text-white glyphicon-log-in">Logout</span>
             </a>
-            <ul class="nav navbar-nav navbar-right mx-4">
-                <li>
-                    <a class="btn  btn-outline-primary" href="login.html"><span
-                            class="glyphicon text-white glyphicon-log-in">Logout</span> </a>
-                </li>
-            </ul>
-        </div>
+          </li>
+        </ul>
+      </div>
     </nav>
-    <canvas id="canvas">
-
-    </canvas>
+    <canvas id="canvas"> </canvas>
 
     <div class="container-fluid">
-
-        <div class="row">
-            <div class="col-md-3">
-                <div class="row">
-
-
-                    <div class="accordion" id="accordionPanelsStayOpenExample">
-                        <div class="accordion-item">
-                            <h2 class="accordion-header" id="panelsStayOpen-headingOne">
-                                <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true"
-                                    aria-controls="panelsStayOpen-collapseOne">
-                                    Dashboard
-
-                                </button>
-                            </h2>
-                            <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse "
-                                aria-labelledby="panelsStayOpen-headingOne">
-                                <div class="accordion-body">
-                                    <ul>
-
-                                        <li>
-
-                                            <a href="dashboard.html">Dashboard</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
+      <div class="row">
+        <div class="col-md-3 vh-100 bg-light">
+          <div class="row">
+            <div class="accordion" id="accordionPanelsStayOpenExample">
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+                  <button
+                    class="accordion-button"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#panelsStayOpen-collapseOne"
+                    aria-expanded="true"
+                    aria-controls="panelsStayOpen-collapseOne"
+                  >
+                    Home
+                  </button>
+                </h2>
+                <div
+                  id="panelsStayOpen-collapseOne"
+                  class="accordion-collapse collapse"
+                  aria-labelledby="panelsStayOpen-headingOne"
+                >
+                  <div class="accordion-body">
+                    <ul>
+                      <li>
+                        <a href="dashboard.html">Dashboard</a>
+                      </li>
+                    </ul>
+                  </div>
                 </div>
-                <div class="row">
-
-                    <div class="accordion" id="accordionPanelsStayOpenExample">
-                        <div class="accordion-item">
-                            <h2 class="accordion-header" id="panelsStayOpen-headingOne">
-                                <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true"
-                                    aria-controls="panelsStayOpen-collapseOne">
-                                    Manage Employee
-                                </button>
-                            </h2>
-                            <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse"
-                                aria-labelledby="panelsStayOpen-headingOne">
-                                <div class="accordion-body">
-                                    <ul>
-                                        <li>
-                                            <a href="manage.html">View employees</a>
-                                        </li>
-                                        <!-- <li>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="accordion" id="accordionPanelsStayOpenExample">
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+                  <button
+                    class="accordion-button"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#panelsStayOpen-collapseOne"
+                    aria-expanded="true"
+                    aria-controls="panelsStayOpen-collapseOne"
+                  >
+                  Employee Module
+                  </button>
+                </h2>
+                <div
+                  id="panelsStayOpen-collapseOne"
+                  class="accordion-collapse collapse"
+                  aria-labelledby="panelsStayOpen-headingOne"
+                >
+                  <div class="accordion-body">
+                    <ul>
+                      <li>
+                        <a href="manage.html">View employees</a>
+                      </li>
+                      <!-- <li>
                                                 <a href="">add/edit</a> 
                                              </li> -->
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
+                    </ul>
+                  </div>
                 </div>
-
+              </div>
             </div>
-            <div class="col-md-9">
-
+          </div>
+          <div class="row">
+            <div class="accordion" id="accordionPanelsStayOpenExample">
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+                  <button
+                    class="accordion-button"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#panelsStayOpen-collapseOne"
+                    aria-expanded="true"
+                    aria-controls="panelsStayOpen-collapseOne"
+                  >
+                    Project
+                  </button>
+                </h2>
+                <div
+                  id="panelsStayOpen-collapseOne"
+                  class="accordion-collapse collapse"
+                  aria-labelledby="panelsStayOpen-headingOne"
+                >
+                  <div class="accordion-body">
+                    <ul>
+                      <li>
+                        <a href="project.html">Project Details</a>
+                        
+                      </li>
+                      <!-- <li>
+                                                <a href="">add/edit</a> 
+                                             </li> -->
+                    </ul>
+                  </div>
+                </div>
+              </div>
             </div>
+          </div>
+          <div class="row">
+            <div class="accordion" id="accordionPanelsStayOpenExample">
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+                  <button
+                    class="accordion-button"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#panelsStayOpen-collapseOne"
+                    aria-expanded="true"
+                    aria-controls="panelsStayOpen-collapseOne"
+                  >
+                    Report
+                  </button>
+                </h2>
+                <div
+                  id="panelsStayOpen-collapseOne"
+                  class="accordion-collapse collapse"
+                  aria-labelledby="panelsStayOpen-headingOne"
+                >
+                  <div class="accordion-body">
+                    <ul>
+                      <li>
+                        <a href="manage.html"></a>
+                      </li>
+                      <!-- <li>
+                                                <a href="">add/edit</a> 
+                                             </li> -->
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="row text-center">
-            <span class="text-primary "></span>
+        
+        <div class="col-md-9 text-center bg-light">
+          <span class="text-light welcome">WELCOME</span>
         </div>
+      </div>
+      <div class="row text-center">
+        <span class="text-primary"></span>
+      </div>
     </div>
-
+    <audio src="./industrial-pulse-drone-27456.mp3"></audio>
     <script>
-        // const data = null;
-        // let quote=document.querySelector('.quote')
-        // setInterval(()=>{
-        //      const xhr = new XMLHttpRequest();
-        // xhr.withCredentials = true;
+      window.addEventListener("keydown", (event) => {
+        const audio = document.querySelector("audio");
+        audio.volume = 0.2;
+        audio.play();
+      });
+      
+      // const data = null;
+      // let quote=document.querySelector('.quote')
+      // setInterval(()=>{
+      //      const xhr = new XMLHttpRequest();
+      // xhr.withCredentials = true;
 
-        // xhr.addEventListener("readystatechange", function () {
-        //     if (this.readyState === this.DONE) {
-        //         let responseData=JSON.parse(xhr.responseText);
-        //         // console.log(responseData[i++]);
-        //         quote.innerHTML = responseData[Math.floor(Math.random()*responseData.length)]
-        //         // responseData.forEach(value=>{
-        //         //     console.log(value)
+      // xhr.addEventListener("readystatechange", function () {
+      //     if (this.readyState === this.DONE) {
+      //         let responseData=JSON.parse(xhr.responseText);
+      //         // console.log(responseData[i++]);
+      //         quote.innerHTML = responseData[Math.floor(Math.random()*responseData.length)]
+      //         // responseData.forEach(value=>{
+      //         //     console.log(value)
 
-        //         // })
-        //     }
-        // });
+      //         // })
+      //     }
+      // });
 
-        // xhr.open("GET", "./movie.json");
+      // xhr.open("GET", "./movie.json");
 
-        // xhr.send(data);
-        // },5000)
+      // xhr.send(data);
+      // },5000)
 
-        let canvas = document.getElementById("canvas");
-        const ctx = canvas.getContext("2d");
+      let canvas = document.getElementById("canvas");
+      const ctx = canvas.getContext("2d");
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+      let stars = [];
+      // stars.push({
+      //     x:canvas.width/2,
+      //     y:canvas.height/2,
+      //     raidus:40,
+      //     vx:0,
+      //     vy:0,
+      //     color:"red"
+      // })
+      document.addEventListener("resize", () => {
         canvas.width = window.innerWidth;
         canvas.height = window.innerHeight;
-        let stars = [];
-        // stars.push({
-        //     x:canvas.width/2,
-        //     y:canvas.height/2,
-        //     raidus:40,
-        //     vx:0,
-        //     vy:0,
-        //     color:"red"
-        // })
-        document.addEventListener('resize', () => {
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
-        })
-        function star() {
-
-            this.x = Math.floor(Math.random() * canvas.width);
-            this.y = Math.floor(Math.random() * canvas.height);
-            this.raidus = Math.floor(Math.random() * 3);
-            this.vx = Math.floor(Math.random() * 10);
-            this.vy = 2;
-            this.color = `rgba(${Math.floor(Math.random() * 255)},${Math.floor(Math.random() * 255)},${Math.floor(Math.random() * 255)},${Math.floor(Math.random() * 255)})`;
-        };
-        let countStars = 2000;
-        // stars.push({
-        //     x:0,
-        //     y:canvas.height,
-        //     raidus:10,
-        //     vx:3,
-        //     vy:-2,
-        //     color:"rgba(255,255,255,.3)"
-        // })
-        function createStars() {
-            for (let i = 0; i < countStars; i++) {
-                stars.push(new star());
-            }
-
+      });
+      function star() {
+        this.x = Math.floor(Math.random() * canvas.width);
+        this.y = Math.floor(Math.random() * canvas.height);
+        this.raidus = Math.floor(Math.random() * 3);
+        this.vx = Math.floor(Math.random() * 10);
+        this.vy = 2;
+        this.color = `rgba(${Math.floor(Math.random() * 255)},${Math.floor(
+          Math.random() * 255
+        )},${Math.floor(Math.random() * 255)},${Math.floor(
+          Math.random() * 255
+        )})`;
+      }
+      let countStars = 2000;
+      // stars.push({
+      //     x:0,
+      //     y:canvas.height,
+      //     raidus:10,
+      //     vx:3,
+      //     vy:-2,
+      //     color:"rgba(255,255,255,.3)"
+      // })
+      function createStars() {
+        for (let i = 0; i < countStars; i++) {
+          stars.push(new star());
         }
-        createStars();
-        function drawStars() {
-            // console.log("hello")
+      }
+      createStars();
+      function drawStars() {
+        // console.log("hello")
 
-            ctx.fillStyle = `rgba(0,0,0,.8)`;
-            ctx.fillRect(0, 0, canvas.width, canvas.height);
-            
-            stars.forEach(star => {
-                ctx.fillStyle = star.color;
-                ctx.beginPath();
-                ctx.arc(star.x, star.y, star.raidus, 0, 2 * Math.PI,true);
-                // star.moveStars();
-                ctx.fill();
-                if (star.x > canvas.width) {
-                    star.x = 0;
-                }
-                if (star.y > canvas.height) {
-                    star.y = 0;
-                }
-                star.x += star.vx / 2;
-                star.y += star.vy / 2;
-            })
-        }
-        setInterval(drawStars, 20);
-     
+        ctx.fillStyle = `rgba(0,0,0,.8)`;
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+        stars.forEach((star) => {
+          ctx.fillStyle = star.color;
+          ctx.beginPath();
+          ctx.arc(star.x, star.y, star.raidus, 0, 2 * Math.PI, true);
+          // star.moveStars();
+          ctx.fill();
+          if (star.x > canvas.width) {
+            star.x = 0;
+          }
+          if (star.y > canvas.height) {
+            star.y = 0;
+          }
+          star.x += star.vx / 2;
+          star.y += star.vy / 2;
+        });
+      }
+      setInterval(drawStars, 20);
     </script>
-</body>
-
+  </body>
 </html>

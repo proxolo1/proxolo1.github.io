@@ -1,0 +1,19 @@
+[{
+    "projectId":"Ajay",
+    "projectName":"delivery",
+    "allocation":"TVM"
+},
+{
+    "projectId":"Sneha",
+    "projectName":"wallmart",
+    "allocation":"Banglore"
+},{
+    "projectId":"Reema",
+    "projectName":"delivery",
+    "allocation":"Kochi"
+},
+{
+    "projectId":"Shaik",
+    "projectName":"darwin box",
+    "allocation":"Hydrabad"
+}]
