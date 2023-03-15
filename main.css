@@ -89,3 +89,11 @@ a, button, input, select {
 	margin-top: 20px;
 	padding: 10px;
 }
+.main{
+	position: absolute;
+	
+}
+.main span{
+	font-size: 28vh;
+	font-family: 'Rajdhani', sans-serif;
+}

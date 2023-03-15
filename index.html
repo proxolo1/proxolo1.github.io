@@ -7,6 +7,9 @@
 		<link type="text/css" rel="stylesheet" href="main.css">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300&display=swap" rel="stylesheet">
 		<style>
 			body {
 				background-color: #fff;
@@ -312,7 +315,7 @@
 			import * as THREE from 'three';
 
 			// import Stats from './stats.module.js';
-			import { GUI } from './lil-gui.module.min.js';
+			// import { GUI } from './lil-gui.module.min.js';
 
 			import { GPUComputationRenderer } from './GPUComputationRenderer.js';
 
@@ -466,7 +469,7 @@
 
 				window.addEventListener( 'resize', onWindowResize );
 
-				const gui = new GUI();
+				// const gui = new GUI();
 
 
 				const effectController = {
@@ -478,7 +481,7 @@
 
 				const valuesChanger = function () {
 
-					velocityUniforms[ 'separationDistance' ].value = effectController.separation;
+					velocityUniforms[ 'separationDistance' ].value = 100;
 					velocityUniforms[ 'alignmentDistance' ].value = effectController.alignment;
 					velocityUniforms[ 'cohesionDistance' ].value = effectController.cohesion;
 					velocityUniforms[ 'freedomFactor' ].value = effectController.freedom;
@@ -487,10 +490,10 @@
 
 				valuesChanger();
 
-				gui.add( effectController, 'separation', 0.0, 100.0, 1.0 ).onChange( valuesChanger );
-				gui.add( effectController, 'alignment', 0.0, 100, 0.001 ).onChange( valuesChanger );
-				gui.add( effectController, 'cohesion', 0.0, 100, 0.025 ).onChange( valuesChanger );
-				gui.close();
+				// gui.add( effectController, 'separation', 0.0, 100.0, 1.0 ).onChange( valuesChanger );
+				// gui.add( effectController, 'alignment', 0.0, 100, 0.001 ).onChange( valuesChanger );
+				// gui.add( effectController, 'cohesion', 0.0, 100, 0.025 ).onChange( valuesChanger );
+				// gui.close();
 
 				initBirds();
 
@@ -678,5 +681,12 @@
 			}
 
 		</script>
+		<div class="container-fluid main">
+			<div class="row ">
+				<div class="col d-flex aligns-items-center">
+					<span>Ajay K Santhosh</span>
+				</div>
+			</div>
+		</div>
 	</body>
 </html>
