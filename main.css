@@ -110,7 +110,7 @@ a, button, input, select {
     text-transform: uppercase;
     text-align: center;
     pointer-events: none;
-    font-size: 5vw;
+    font-size: 6vw;
     letter-spacing: 2.6vw;
 	color: hsl(192deg 100% 50%);
     /* text-shadow: 0px 6px 10px #3d5257; */
@@ -142,7 +142,7 @@ a, button, input, select {
     padding: 0;
     margin: 0;
     position: relative;
-	color: #00ff5d;
+	color: #ffffff;
 }
 .page-subtitle {
     user-select: none;
