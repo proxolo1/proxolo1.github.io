@@ -89,11 +89,70 @@ a, button, input, select {
 	margin-top: 20px;
 	padding: 10px;
 }
-.main{
-	position: absolute;
-	
+
+
+.page.show {
+    z-index: 100;
+    opacity: 1;
 }
-.main span{
-	font-size: 28vh;
+.home .titles {
+    top: 50%;
+    left: 50%;
+    z-index: 100;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+.home .page-title {
+    text-transform: uppercase;
+    text-align: center;
+    pointer-events: none;
+    font-size: 5vw;
+    letter-spacing: 2.6vw;
+	color: hsl(192deg 100% 50%);
+    /* text-shadow: 0px 6px 10px #3d5257; */
+    filter: drop-shadow(0px 6px 10px #3d5257);
+    text-indent: 2.6vw;
+    opacity: 1;
+    font-weight: 100;
+    position: relative;
+    top: 0;
+    left: auto;
+    transform: none;
+    padding: 0;
+    margin: 0;
+    position: relative;
 	font-family: 'Rajdhani', sans-serif;
+
+}
+.home .page-subtitle {
+    text-transform: uppercase;
+    text-align: center;
+    pointer-events: none;
+    font-size: 1vw;
+    letter-spacing: 1.55vw;
+    text-indent: 1.8vw;
+    position: relative;
+    top: 0;
+    left: auto;
+    transform: none;
+    padding: 0;
+    margin: 0;
+    position: relative;
+	color: #00ff5d;
+}
+.page-subtitle {
+    user-select: none;
+    position: relative;
+    white-space: nowrap;
+    pointer-events: none;
+    top: 29vh;
+    margin: 0 auto;
+    color: rgba(255,255,255,.5);
+    text-transform: uppercase;
+    letter-spacing: 0.5vw;
+    font-size: .9vw;
+    text-align: center;
 }
