@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1679737353063,
+  "timestamp": 1684501349442,
   "index": "/index.html",
   "assetGroups": [
     {
@@ -11,13 +11,13 @@
         "ignoreVary": true
       },
       "urls": [
-        "/10.657622964173a272.js",
+        "/680.0a43012848cf2c05.js",
         "/favicon.ico",
         "/index.html",
-        "/main.f26e9238570ba7ca.js",
+        "/main.022c0a077b01842f.js",
         "/manifest.webmanifest",
         "/polyfills.fcb5356ac8a8e68e.js",
-        "/runtime.70d75ac16f691ee3.js",
+        "/runtime.d886b3b9ef6b7052.js",
         "/styles.f7cdbde1c6f739dc.css"
       ],
       "patterns": []
@@ -31,9 +31,12 @@
       },
       "urls": [
         "/apple-touch-icon.png",
+        "/assets/Angry.fbx",
+        "/assets/Chicken Dance.fbx",
         "/assets/aframe.jpg",
         "/assets/ngx-rocket-logo.png",
         "/assets/ngx-rocket-logo@192.png",
+        "/assets/npm.svg",
         "/fa-brands-400.672e913fb6f186fb.woff2",
         "/fa-brands-400.d67d1219bc30e68d.ttf",
         "/fa-regular-400.073940ed482e0363.ttf",
@@ -46,11 +49,14 @@
   ],
   "dataGroups": [],
   "hashTable": {
-    "/10.657622964173a272.js": "f6e185a90553bd1e8e038005c905215b9a1ac678",
+    "/680.0a43012848cf2c05.js": "0fc447e6b2cfda46ee56cf807e854f2962a5fa03",
     "/apple-touch-icon.png": "229df2094cc590088de00ea97a1eb4e4493101d2",
+    "/assets/Angry.fbx": "725a42cff4eeced520843c115f39a4d07d1eb431",
+    "/assets/Chicken Dance.fbx": "449fe4589c24a00d08f0fd30a2c130100d87c237",
     "/assets/aframe.jpg": "0d9f39f25d7e69c368209b57df6e37c2971302c3",
     "/assets/ngx-rocket-logo.png": "0ac53fd27406fe5a36e68285315fb0012e54058e",
     "/assets/ngx-rocket-logo@192.png": "461b730f9c6dc818f8af9acbe62dfde24dc02d7a",
+    "/assets/npm.svg": "3ecd36698726d0ca1a4c766c7a5f1cae6f272083",
     "/fa-brands-400.672e913fb6f186fb.woff2": "f1234dff4095688c945513d40751012b70462c03",
     "/fa-brands-400.d67d1219bc30e68d.ttf": "04e58bdb86afc218a250948fd920cba85134ed78",
     "/fa-regular-400.073940ed482e0363.ttf": "59589e2b771619f6fa6ec2939c9b6b15d32794c3",
@@ -58,11 +64,11 @@
     "/fa-solid-900.c9f6e41813989c48.ttf": "0cd050f6e9b8becd75bd9edc86f5d5c00229ae0e",
     "/fa-solid-900.d5d28b783e396c28.woff2": "ec2f4e5f311462dce67b8f354e5bb9a68c12cf58",
     "/favicon.ico": "72f8407942ac0f3524b7e19cc28b5c748921b409",
-    "/index.html": "37156b7b417e332a5d2c251a6ed21b25edec4d50",
-    "/main.f26e9238570ba7ca.js": "a478045cd27687379f81aaa29ca07d83c602f9b8",
+    "/index.html": "31834da699c0cd9823edaab941c846e520080f0f",
+    "/main.022c0a077b01842f.js": "765c8d43d93a72d15837483427401a230a844484",
     "/manifest.webmanifest": "afbba58f8be305075b35876c1552f6418597fd53",
     "/polyfills.fcb5356ac8a8e68e.js": "26cdf876967ee9aeba1a71bb1c4dfce92998b92d",
-    "/runtime.70d75ac16f691ee3.js": "f756ecdc7742066102d1feff6423a94ad27ca028",
+    "/runtime.d886b3b9ef6b7052.js": "3acae9babffe6c9e63ead7a0185a3d7105fde17b",
     "/styles.f7cdbde1c6f739dc.css": "2d8e05b8013d05bb65e6f93f773a09d21359bca6"
   },
   "navigationUrls": [
