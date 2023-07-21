@@ -132,4 +132,22 @@ body
 
   /* #gui { position: absolute; top: 2px; left: 2px } */
 
+  .progress{
+    position: absolute;
+    width: 100%;
+    height:100%;
+    background-color: black;
+    z-index: 999999;
+  }
+  .bar{
+    position: relative;
+    top: 50%;
+    width: 100%;
+    height: 2px;
+  }
+  .status{
+    background: red;
+    height: 2px;
+  }
+
 /*# sourceMappingURL=main.css.map*/
